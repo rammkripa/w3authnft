@@ -1,0 +1,74 @@
+Arguments: 
+  /opt/homebrew/Cellar/node/18.11.0/bin/node /opt/homebrew/bin/yarn
+
+PATH: 
+  /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ramkripa/opt/anaconda3/bin:/Users/ramkripa/opt/anaconda3/condabin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/ramkripa/.cargo/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.11.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/rinraf: Not found
+      at params.callback [as _callback] (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:66145:18)
+      at self.callback (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "w3authnft",
+    "private" : true,
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+      "@types/node": "^16",
+      "cross-env": "^7.0.3",
+      "eslint": "^8.9.0",
+      "husky": "^7.0.4",
+      "lerna": "^4.0.0",
+      "lint-staged": "^12.3.4",
+      "prettier": "^2.5.1",
+      "rinraf": "^3.0.2",
+      "typescript": "^4.5.5"
+    },
+    "lint-staged": {
+      "*": "lerna run --concurrency 1 --stream --since HEAD --exclude-dependents pre-commit -- "
+    },
+    "engines" : {
+      "node" : ">=14.17.0",
+      "npm" : ">=6.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/rammkripa/w3authnft.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/rammkripa/w3authnft/issues"
+    },
+    "homepage": "https://github.com/rammkripa/w3authnft#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

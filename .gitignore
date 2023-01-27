@@ -1,0 +1,15 @@
+node_modules/
+jspm_packages/
+typings/
+.npm
+.eslintcache
+.node_repl_history
+*.tgz
+.env
+.yarn-integrity
+.next
+serverless.env.yml
+documentation/
+.husky
+dist/
+build/
