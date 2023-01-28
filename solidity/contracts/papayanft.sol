@@ -13,24 +13,17 @@ contract papayanft is ERC721URIStorage, Ownable {
 
     constructor() ERC721("GreenPapaya", "GPPYA") {}
 
-    function awardItem(address player, string memory tokenURI)
-        public
-        returns (uint256)
+    function awardItem(address player, string memory tokenURI) external payable returns (uint256)
     {
+        require(msg.value > floor_price, "not enough money");
         uint256 newItemId = _tokenIds.current();
         _mint(player, newItemId);
         _setTokenURI(newItemId, tokenURI);
-
         _tokenIds.increment();
         return newItemId;
     }
     
     function setPrice(uint256 price) public onlyOwner {
         floor_price = price;
-    }
-
-    function mintNft(address player, uint256 tokenId) external payable{
-        require(msg.value > floor_price, "not enough money");
-        _mint(player, tokenId);
     }
 }

@@ -38,8 +38,20 @@
     "@truffle/hdwallet-provider": "^2.0.1"
   },
   "scripts": {
-    "bootstrap" : "lerna bootstrap",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run start:blockchain:client && npm run migrate",
+    "start:blockchain:client": ". ./scripts/start-blockchain.sh",
+    "stop:blockchain:client": ". ./scripts/stop-blockchain.sh",
+    "compile": "truffle compile --all",
+    "migrate": "truffle migrate --reset --compile-all",
+    "pretest": "npm run start:blockchain:client",
+    "test": "truffle migrate --reset --compile-all && truffle test --network development",
+    "posttest": "npm run stop:blockchain:client",
+    "precommit": "lint-staged",
+    "prettier": "prettier --write \"**/*.{js,json,css,md}\"",
+    "eslint-check": "eslint --print-config .eslintrc.json | eslint-config-prettier-check",
+    "lint": "yarn run lint:sol && yarn run lint:js",
+    "lint:sol": "prettier --write contracts/**/*.sol && solhint \"contracts/*.sol\"",
+    "lint:js": "eslint --fix test/**/*.js"
   },
   "keywords": [],
   "author": "",
